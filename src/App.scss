@@ -15,6 +15,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .upper-content {
@@ -34,7 +35,8 @@
   height: var(--size);
   width: var(--size);
   position: relative;
-  transition: 300ms;
+  transition-property: width;
+  transition-duration: 300ms;
   background: rgba(0, 0, 255, 0.329);
   overflow: hidden;
   ::placeholder {
