@@ -84,8 +84,8 @@ function CurrentWeather({ data }) {
         <div className="current-weather-conditions-temperature">
           <h1>
             {units
-              ? data?.current?.temp_f + '\xB0F'
-              : data?.current?.temp_c + '\xB0C'}
+              ? Math.round(data?.current?.temp_f) + '\xB0'
+              : Math.round(data?.current?.temp_c) + '\xB0'}
           </h1>
         </div>
         <div className="current-weather-conditions-icon">
@@ -96,15 +96,15 @@ function CurrentWeather({ data }) {
           <h3>
             Wind:{' '}
             {units
-              ? data?.current?.wind_mph + ' mph'
-              : data?.current?.wind_kph + ' kph'}
+              ? Math.round(data?.current?.wind_mph) + ' mph'
+              : Math.round(data?.current?.wind_kph) + ' kph'}
           </h3>
           <h3>Humidity: {data?.current?.humidity}%</h3>
           <h3>
             Feels Like:{' '}
             {units
-              ? data?.current?.feelslike_f + '\xB0F'
-              : data?.current?.feelslike_c + '\xB0C'}
+              ? Math.round(data?.current?.feelslike_f) + '\xB0'
+              : Math.round(data?.current?.feelslike_c) + '\xB0'}
           </h3>
         </div>
         <div className="current-weather-conditions-measure">
@@ -141,12 +141,12 @@ function CurrentWeather({ data }) {
               <img src={forecast?.day?.condition?.icon} alt="None" />
               <div className="forecast-high-low">
                 {units
-                  ? forecast?.day?.maxtemp_f + '\xB0F'
-                  : forecast?.day?.maxtemp_c + '\xB0C'}{' '}
+                  ? Math.round(forecast?.day?.maxtemp_f) + '\xB0'
+                  : Math.round(forecast?.day?.maxtemp_c) + '\xB0'}{' '}
                 |{' '}
                 {units
-                  ? forecast?.day?.mintemp_f + '\xB0F'
-                  : forecast?.day?.mintemp_c + '\xB0C'}
+                  ? Math.round(forecast?.day?.mintemp_f) + '\xB0'
+                  : Math.round(forecast?.day?.mintemp_c) + '\xB0'}
               </div>
               <h2>
                 {convertTime12to24(forecast?.astro?.sunrise)}{' '}

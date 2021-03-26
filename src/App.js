@@ -5,15 +5,34 @@ import { gsap, Power3 } from 'gsap';
 import './App.scss';
 
 function App() {
-  const API_KEY = 'd7e8027877484293a6a40033211803';
+  const API_KEY = 'INSERT API KEY HERE';
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [weather, setWeather] = useState([]);
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('Los Angeles');
+  const [counter, setCounter] = useState(0);
+  const [i, setI] = useState(0);
 
   useEffect(() => {
     getRecipe();
   }, [query]);
+
+  useEffect(() => {
+    return () => {
+      let weatheranimate = gsap.timeline();
+      weatheranimate.to('.current-weather', {
+        ease: Power3.easeInOut,
+        opacity: 0,
+        duration: 0.5,
+      });
+      weatheranimate.to('.current-weather', {
+        ease: Power3.easeInOut,
+        opacity: 1,
+        duration: 0.5,
+        delay: 0.8,
+      });
+    };
+  }, [counter]);
 
   useEffect(() => {
     return () => {
@@ -42,9 +61,11 @@ function App() {
 
   const getSearch = (event) => {
     event.preventDefault();
-    setQuery(search);
     setSearch('');
     setHasSubmitted(true);
+    setI(i + 1);
+    if (i > 0) setCounter(counter + 1);
+    setTimeout(() => setQuery(search), 290);
   };
 
   return (
