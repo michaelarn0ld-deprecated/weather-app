@@ -1,5 +1,5 @@
 import React from 'react';
-import CurrentWeather from './CurrentWeather';
+import CurrentWeather from './Components/CurrentWeather';
 import { useEffect, useState } from 'react';
 import { gsap, Power3 } from 'gsap';
 import './App.scss';
@@ -19,7 +19,7 @@ function App() {
     return () => {
       let tl = gsap.timeline();
       tl.to('.upper-content-header', { opacity: 0, y: -100, delay: 0.5 });
-      tl.to('.search-bar', { ease: Power3.easeInOut, y: -300, duration: 1 });
+      tl.to('.search-bar', { ease: Power3.easeInOut, y: '-45vh', duration: 1 });
       tl.to('.current-weather', {
         ease: Power3.easeInOut,
         opacity: 1,

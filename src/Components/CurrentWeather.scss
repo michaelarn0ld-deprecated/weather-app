@@ -1,11 +1,12 @@
 .current-weather {
   position: absolute;
-  top: 25%;
-  height: 70vh;
+  top: 20%;
+  height: 75vh;
   width: 95%;
   border-radius: 20px;
   opacity: 0;
   display: flex;
+  flex-direction: column;
   background: rgba(8, 8, 8, 0.329);
 }
 .current-weather > div {
@@ -15,7 +16,6 @@
 }
 
 .current-weather-header {
-  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -43,4 +43,29 @@
   padding: 7px;
   transform: translateX(3px);
   font-size: 2rem;
+}
+
+.current-weather-conditions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px 0 50px;
+  &-temperature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+  &-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.forecast-weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px 0 50px;
 }
