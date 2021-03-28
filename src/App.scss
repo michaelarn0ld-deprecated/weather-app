@@ -54,7 +54,7 @@
 
 .search-bar-input {
   font-size: 1.5rem;
-  width: calc(100% - var(--size));
+  width: calc(100% - 80px);
   border: 0;
   color: white;
   background: transparent;
@@ -85,5 +85,32 @@
   margin-right: 2px;
   &:focus {
     outline: 0;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .upper-content {
+    font-size: 1rem;
+    margin-bottom: 5vh;
+  }
+
+  .search-bar {
+    &:focus-within {
+      width: 80%;
+      & .search-bar-submit {
+        opacity: 0;
+      }
+    }
+  }
+
+  .search-bar-submit {
+    margin-right: 14px;
+    z-index: 0;
+  }
+
+  .search-bar-input {
+    font-size: 1.5rem;
+    width: 100%;
+    z-index: 1;
   }
 }
