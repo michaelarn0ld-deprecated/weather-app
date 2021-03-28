@@ -69,3 +69,22 @@
   align-items: center;
   padding: 0 50px 0 50px;
 }
+
+@media screen and (max-width: 960px) {
+  .current-weather {
+    overflow: hidden;
+    font-size: 0.8rem;
+    &-header {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    &-conditions-measure {
+      display: none;
+    }
+  }
+  .forecast-weather {
+    padding: 0;
+  }
+}
