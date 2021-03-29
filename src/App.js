@@ -5,7 +5,7 @@ import { gsap, Power3 } from 'gsap';
 import './App.scss';
 
 function App() {
-  const API_KEY = 'd7e8027877484293a6a40033211803';
+  const API_KEY = 'ENTER API KEY HERE';
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [weather, setWeather] = useState([]);
   const [search, setSearch] = useState('');
@@ -34,7 +34,11 @@ function App() {
     return () => {
       let tl = gsap.timeline();
       tl.to('.upper-content-header', { opacity: 0, y: -100, delay: 0.5 });
-      tl.to('.search-bar', { ease: Power3.easeInOut, y: '-45vh', duration: 1 });
+      tl.to('.search-bar', {
+        ease: Power3.easeInOut,
+        y: '-45vh',
+        duration: 1,
+      });
       tl.to('.current-weather', {
         ease: Power3.easeInOut,
         opacity: 1,

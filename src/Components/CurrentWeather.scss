@@ -1,21 +1,26 @@
 .current-weather {
   position: absolute;
-  top: 20%;
-  height: 75vh;
+  top: 17%;
+  min-height: 70vh;
   width: 95%;
   border-radius: 20px;
   opacity: 0;
+  background: rgba(8, 8, 8, 0.329);
+}
+
+.return-data {
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
-  background: rgba(8, 8, 8, 0.329);
+  justify-content: space-around;
 }
 
 .error {
   width: auto;
-  height: auto;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
-  justify-content: top;
+  justify-content: center;
   align-items: center;
   & > i {
     font-size: 5rem;

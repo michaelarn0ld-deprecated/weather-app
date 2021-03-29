@@ -46,7 +46,7 @@ function CurrentWeather({ data }) {
   return (
     <div className="current-weather">
       {data?.error === undefined ? (
-        <div>
+        <div className="return-data">
           <div className="current-weather-header">
             <div className="current-weather-header-location">
               <h2>
@@ -132,7 +132,7 @@ function CurrentWeather({ data }) {
             </div>
           </div>
           <div className="forecast-weather">
-            {data?.forecast?.forecastday.map((forecast) => {
+            {data?.forecast?.forecastday.map((forecast, index) => {
               const forecastdate = new Date(forecast?.date);
               const forecastdayNames = [
                 'Mon',
@@ -144,7 +144,7 @@ function CurrentWeather({ data }) {
                 'Sun',
               ];
               return (
-                <div className="forecast-wrapper">
+                <div className="forecast-wrapper" key={index}>
                   <h1>{forecastdayNames[forecastdate.getDay()]}</h1>
                   <img src={forecast?.day?.condition?.icon} alt="None" />
                   <div className="forecast-high-low">
