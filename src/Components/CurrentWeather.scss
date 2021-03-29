@@ -9,6 +9,23 @@
   flex-direction: column;
   background: rgba(8, 8, 8, 0.329);
 }
+
+.error {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  & > i {
+    font-size: 5rem;
+    margin: 10% 0 3% 0;
+  }
+  & > h1 {
+    text-align: center;
+  }
+}
+
 .current-weather > div {
   margin: 20px;
   letter-spacing: 2px;

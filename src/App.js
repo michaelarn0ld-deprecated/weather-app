@@ -13,6 +13,8 @@ function App() {
   const [counter, setCounter] = useState(0);
   const [i, setI] = useState(0);
 
+  let weatheranimate2 = gsap.timeline();
+
   useEffect(() => {
     getRecipe();
   }, [query]);
@@ -23,13 +25,7 @@ function App() {
       weatheranimate.to('.current-weather', {
         ease: Power3.easeInOut,
         opacity: 0,
-        duration: 0.5,
-      });
-      weatheranimate.to('.current-weather', {
-        ease: Power3.easeInOut,
-        opacity: 1,
-        duration: 0.5,
-        delay: 0.8,
+        duration: 0.4,
       });
     };
   }, [counter]);
@@ -37,7 +33,7 @@ function App() {
   useEffect(() => {
     return () => {
       let tl = gsap.timeline();
-      tl.to('.upper-content-header', { opacity: 0, y: -100, delay: 0.5 });
+      tl.to('.upper-content-header', { opacity: 0, y: -100 });
       tl.to('.search-bar', { ease: Power3.easeInOut, y: '-45vh', duration: 1 });
       tl.to('.current-weather', {
         ease: Power3.easeInOut,
@@ -53,8 +49,12 @@ function App() {
     );
     const data = await response.json();
     setWeather(data);
+    weatheranimate2.to('.current-weather', {
+      ease: Power3.easeInOut,
+      opacity: 1,
+      duration: 0.4,
+    });
   };
-
   const updateSearch = (event) => {
     setSearch(event.target.value);
   };
