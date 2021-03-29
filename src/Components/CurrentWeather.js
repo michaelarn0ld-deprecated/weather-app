@@ -31,7 +31,6 @@ function CurrentWeather({ data }) {
   const date = new Date(data?.location?.localtime);
   const width = window.innerWidth;
 
-  console.log(width);
   const convertTime12to24 = (time12h) => {
     const [time, modifier] = time12h.split(' ');
     let [hours, minutes] = time.split(':');
@@ -43,6 +42,7 @@ function CurrentWeather({ data }) {
     }
     return `${hours}:${minutes}`;
   };
+
   return (
     <div className="current-weather">
       {data?.error === undefined ? (
@@ -50,7 +50,10 @@ function CurrentWeather({ data }) {
           <div className="current-weather-header">
             <div className="current-weather-header-location">
               <h2>
-                {data?.location?.name}, {data?.location?.region},{' '}
+                {data?.location?.name},{' '}
+                {data?.location?.region === (undefined || '')
+                  ? ''
+                  : `${data?.location?.region}, `}
                 {width <= 960 ? '' : data?.location?.country}
               </h2>
               <h2>{width > 960 ? '' : data?.location?.country}</h2>
