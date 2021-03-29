@@ -29,6 +29,9 @@ function CurrentWeather({ data }) {
     'Saturday',
   ];
   const date = new Date(data?.location?.localtime);
+  const width = window.innerWidth;
+
+  console.log(width);
   const convertTime12to24 = (time12h) => {
     const [time, modifier] = time12h.split(' ');
     let [hours, minutes] = time.split(':');
@@ -48,14 +51,17 @@ function CurrentWeather({ data }) {
             <div className="current-weather-header-location">
               <h2>
                 {data?.location?.name}, {data?.location?.region},{' '}
-                {data?.location?.country}
+                {width <= 960 ? '' : data?.location?.country}
               </h2>
+              <h2>{width > 960 ? '' : data?.location?.country}</h2>
               <h2>
-                {monthNames[date.getMonth()]} {date.getDate()},{' '}
-                {date.getFullYear()} | {dayNames[date.getDay()]}{' '}
-                {data?.location?.localtime.slice(
+                {width > 960
+                  ? `${monthNames[date.getMonth()]} ${date.getDate()},
+                ${date.getFullYear()} | ${dayNames[date.getDay()]}
+                ${data?.location?.localtime.slice(
                   data?.location?.localtime.length - 5
-                )}
+                )}`
+                  : data?.location?.localtime}
               </h2>
             </div>
             <div className="current-weather-header-units">
@@ -92,7 +98,7 @@ function CurrentWeather({ data }) {
             </div>
             <div className="current-weather-conditions-icon">
               <img src={data?.current?.condition?.icon} alt="None" />
-              <h2>{data?.current?.condition?.text}</h2>
+              <h2>{width <= 960 ? '' : data?.current?.condition?.text}</h2>
             </div>
             <div className="current-weather-conditions-measure">
               <h3>

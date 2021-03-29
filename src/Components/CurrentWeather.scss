@@ -66,6 +66,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 50px 0 50px;
+  margin: 4vh 0 4vh 0;
   &-temperature {
     display: flex;
     justify-content: center;
@@ -91,11 +92,19 @@
   .current-weather {
     overflow: hidden;
     font-size: 0.8rem;
+    justify-content: center;
     &-header {
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
+    }
+    &-conditions {
+      margin: 6vh;
+      display: flex;
+      padding: 0;
+      justify-content: space-between;
+      align-items: center;
     }
     &-conditions-measure {
       display: none;
