@@ -1,16 +1,30 @@
-# Temporary Hosting
+# My Portfolio
+
 https://michaelarn0ld.github.io/weather-app/
 
-# Getting Started with Create React App
+**Version 1.0.0**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Get current and forecasted weather data, including windspeed, pressure, and air quality data.
 
-## Scope
+This weather application calls the an external API to return current and forecasted weather data for a user input city; the user will have the option to view the results in imperial or metric units.
 
-This project is intended to be a weather application that a user will enter the name of a city for. The application will call weatherAPI and return current and historical weather data. Historical weather will be used to generate a short statistical report on how the current weather compares with recent weather.
+---
 
-The user will have the option to view the weather data in imperial or metric units
+## Technologies
 
-## Resources used
+- React
+- GSAP
+- HTML
+- SCSS
+
+## Contributors
+
+- Michael Arnold: <marnolddevelop@gmail.com>
+
+## References
 
 This API that this project uses can be found here: https://www.weatherapi.com/
+
+## License & Copywright
+
+© Michael Arnold 2021

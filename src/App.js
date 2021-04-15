@@ -5,7 +5,7 @@ import { gsap, Power3 } from 'gsap';
 import './App.scss';
 
 function App() {
-  const API_KEY = '';
+  const API_KEY = 'd7e8027877484293a6a40033211803';
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [weather, setWeather] = useState([]);
   const [search, setSearch] = useState('');
