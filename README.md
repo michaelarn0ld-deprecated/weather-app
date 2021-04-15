@@ -1,4 +1,4 @@
-# My Portfolio
+# A minimalistic weather application
 
 https://michaelarn0ld.github.io/weather-app/
 
@@ -6,7 +6,7 @@ https://michaelarn0ld.github.io/weather-app/
 
 Get current and forecasted weather data, including windspeed, pressure, and air quality data.
 
-This weather application calls the an external API to return current and forecasted weather data for a user input city; the user will have the option to view the results in imperial or metric units.
+This weather application fetches from an external API to return current and forecasted weather data for a user input city; the user will have the option to view the results in imperial or metric units.
 
 ---
 
